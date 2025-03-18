@@ -1,0 +1,69 @@
+
+	1. ns3, animation, dataflow, wireshark
+	2. hyperledger-fabric
+	3. blockchain-explorer
+
+	4. ns3 simulation data live collect
+	5. stage-4 data collection job -> 
+	
+	# link 5 and 6
+	# data has to available - node server application using express, react
+	
+	6. data has to be available to our fabric network - using fabric SDK, Gateway SDK
+	7. chaincode implementation
+	8. blockchain verification
+	
+	- identity check user1,2,3
+	- data check
+	- user1 data -> create block
+	- user2 recieve -> data copy that been sent from user1
+	- user 2 data -> create block
+	- orderer user1 and user2 block crossmatch
+	- data from user1 sent to user2
+	
+	comparison	- table -	
+	
+	4G LTE - data transfer and server save - 60
+	 fabric - 80
+	
+
+	1. may 15	
+	
+	
+	
+	plan
+	----
+	
+	NS3 simulation - Data - 
+
+	netanim
+	wireshark
+	
+	MIM - 
+	
+	scenario 1:
+	==========
+	
+	user_1 text message -> user_2 recieved
+	
+
+	if the text message is changed/altered/breach	in between the transaction while reaching to user_2
+
+		MIM
+		
+		user_3
+		
+			
+ 	
+	text message - data 
+	
+	scenario 2:
+	===========
+	
+	network LTE/4G - network is being used by all users.
+	user 4 is trying to change/read the text message that has been stored in the network/server
+	
+	data breach
+
+	
+	Blockchain

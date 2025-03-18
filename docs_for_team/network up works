@@ -1,0 +1,68 @@
+./network.sh up
+
+Using docker and docker-compose
+Starting nodes with CLI timeout of '5' tries and CLI delay of '3' seconds and using database 'leveldb' with crypto from 'cryptogen'
+LOCAL_VERSION=v2.5.6
+DOCKER_IMAGE_VERSION=v2.5.6
+/home/tanvir/Documents/github.com/2324284/go/src/fabric-samples/test-network/../bin/cryptogen
+Generating certificates using cryptogen tool
+Creating Org1 Identities
++ cryptogen generate --config=./organizations/cryptogen/crypto-config-org1.yaml --output=organizations
+org1.example.com
++ res=0
+Creating Org2 Identities
++ cryptogen generate --config=./organizations/cryptogen/crypto-config-org2.yaml --output=organizations
+org2.example.com
++ res=0
+Creating Orderer Org Identities
++ cryptogen generate --config=./organizations/cryptogen/crypto-config-orderer.yaml --output=organizations
++ res=0
+Generating CCP files for Org1 and Org2
+Creating network "fabric_test" with the default driver
+Creating volume "compose_orderer.example.com" with default driver
+Creating volume "compose_peer0.org1.example.com" with default driver
+Creating volume "compose_peer0.org2.example.com" with default driver
+Creating orderer.example.com    ... done
+Creating peer0.org1.example.com ... done
+Creating peer0.org2.example.com ... done
+Creating cli                    ... done
+CONTAINER ID   IMAGE                               COMMAND                  CREATED         STATUS                   PORTS                                                                                                                             NAMES
+16f9e77ebb68   hyperledger/fabric-tools:latest     "/bin/bash"              2 seconds ago   Up Less than a second                                                                                                                                      cli
+302f1780e19d   hyperledger/fabric-peer:latest      "peer node start"        5 seconds ago   Up 1 second              0.0.0.0:9051->9051/tcp, :::9051->9051/tcp, 7051/tcp, 0.0.0.0:9445->9445/tcp, :::9445->9445/tcp                                    peer0.org2.example.com
+ae993a6b1c6f   hyperledger/fabric-orderer:latest   "orderer"                5 seconds ago   Up 1 second              0.0.0.0:7050->7050/tcp, :::7050->7050/tcp, 0.0.0.0:7053->7053/tcp, :::7053->7053/tcp, 0.0.0.0:9443->9443/tcp, :::9443->9443/tcp   orderer.example.com
+e1597189f523   hyperledger/fabric-peer:latest      "peer node start"        5 seconds ago   Up 1 second              0.0.0.0:7051->7051/tcp, :::7051->7051/tcp, 0.0.0.0:9444->9444/tcp, :::9444->9444/tcp                                              peer0.org1.example.com
+08eba5687177   hyperledger/fabric-nodeenv:2.5      "docker-entrypoint.s…"   2 weeks ago     Exited (1) 2 weeks ago                                                                                                                                     relaxed_benz
+b2a59b48cd79   hyperledger/fabric-nodeenv:2.5      "docker-entrypoint.s…"   2 weeks ago     Exited (1) 2 weeks ago                                                                                                                                     stoic_bhabha
+45788eebdbbe   hyperledger/fabric-nodeenv:2.5      "docker-entrypoint.s…"   2 weeks ago     Exited (1) 2 weeks ago 
+
+
+
+
+Peers:
+
+- peer0.org1.example.com
+- peer0.org2.example.com
+
+Organizations:
+
+- org1.example.com
+- org2.example.com
+
+Orderer:
+
+- orderer.example.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

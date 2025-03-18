@@ -1,0 +1,90 @@
+
+	Home PC
+	-------
+
+	application - weather
+	
+
+
+
+docker	install
+
+write up all the settings and application data into a single page - type YAML
+
+"docker-compose.yaml"
+ source code
+ 
+1. node			16
+2. express		14
+3. apache		2		
+4. mysql server		10
+5. push notification	2
+6. php			8
+
+
+
+	Uni PC
+	------
+	
+	source code
+
+	# just installed Docker software
+
+	docker-compose.yaml up
+
+	application run
+	
+	-> php, node, mysql error....
+	-> 
+	
+			Docker ENV software team 1		Image
+		-----------------------
+		|	
+			source code	|
+		|	
+			weather
+			app
+			software
+			with proper
+			version and 
+			settings	|
+		|			|
+		-----------------------
+		
+		
+
+			
+			Docker ENV software team 2		Image_2
+		-----------------------
+		|	
+			source code	|
+		|	
+			weather
+			app
+			software
+			with proper
+			version and 
+			settings	|
+		|			|
+		-----------------------
+		
+		
+	software team 3	copies or uses IMAGE_2
+	 + personalized stuffs
+	 
+	 Environment - Start - docker compose up
+	 
+	 
+	 
+	 ./network.sh 
+	 deployCC 
+	 -ccn basic 
+	 -ccp ../asset-transfer-basic/chaincode-go 
+	 -ccl go
+	 
+	 
+	 
+	 
+	 
+	 
+	 

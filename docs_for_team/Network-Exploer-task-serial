@@ -1,0 +1,109 @@
+
+docker stop $(docker ps -aq)
+
+# Remove all volumes
+docker volume prune
+
+# Remove all networks
+docker network prune
+
+
+docker-compose up -d
+
+docker network ls
+docker ps -a
+
+docker stop <container_id>
+docker rm <container_id>
+
+sudo service docker restart
+
+docker compose down -v 
+
+
+installing hyperledger fabric:
+=============================
+
+https://medium.com/@immortalsaint/setup-hyperledger-fabric-2-5-lts-on-ubuntu-22-04-linux-f60163281f0c
+
+
+Putting all the things into their places:
+========================================
+
+
+https://hyperledger-fabric.readthedocs.io/en/latest/test_network.html
+
+1. start the test netowork:
+
+(base) root@tanvir-virtual-machine:/home/tanvir/Documents/github.com/2324284/go/src/fabric-samples/test-network# ./network.sh up
+
+2. create a channel:
+
+(base) root@tanvir-virtual-machine:/home/tanvir/Documents/github.com/2324284/go/src/fabric-samples/test-network# ./network.sh createChannel
+
+3. add a asset-transfer-basic chaincode:
+
+(base) root@tanvir-virtual-machine:/home/tanvir/Documents/github.com/2324284/go/src/fabric-samples/test-network# ./network.sh deployCC -ccn basic -ccp ../asset-transfer-basic/chaincode-go -ccl go
+
+4.1. create a "explorer" folder inside: /home/tanvir/Documents/github.com/2324284/go/src/fabric-samples/test-network
+
+copy contents of the following folder:
+/home/tanvir/Documents/blockchain-explorer/examples/net1
+
+into this "explorer" folder.
+
+4.2. visit : https://github.com/hyperledger/blockchain-explorer/blob/main/docker-compose.yaml
+
+copy this docker-compose.yaml file into that "explorer" folder too.
+
+4.3. start docker compose for hyperledger blockchain explorer from that explorer folder:
+
+docker-compose up -d
+
+
+docker-compose down -v
+
+
+communicating with the Containers and the Network:
+=================================================
+
+
+
+1. docker ps -a
+
+CONTAINER ID   IMAGE                                                                                                                                                                      COMMAND                  CREATED             STATUS                       PORTS                                                                                                                             NAMES
+2367be916266   dev-peer0.org2.example.com-basic_1.0.1-650b7b4f5a8545d710651dc01edee8cf83518ef4b36a67a08be061ba14da653a-c0a713c435d5298d7e406d76938453c6295ec064a3b830682335e59970b8be78   "chaincode -peer.add…"   59 minutes ago      Up 59 minutes                                                                                                                                                  dev-peer0.org2.example.com-basic_1.0.1-650b7b4f5a8545d710651dc01edee8cf83518ef4b36a67a08be061ba14da653a
+
+9b6344879e29   dev-peer0.org1.example.com-basic_1.0.1-650b7b4f5a8545d710651dc01edee8cf83518ef4b36a67a08be061ba14da653a-20086c6927e952735a27a90ceb7546bf364568aa2d1f2d3b0a8fde53dfe8f69d   "chaincode -peer.add…"   59 minutes ago      Up 59 minutes                                                                                                                                                  dev-peer0.org1.example.com-basic_1.0.1-650b7b4f5a8545d710651dc01edee8cf83518ef4b36a67a08be061ba14da653a
+
+2468a5fe3077   hyperledger/explorer:latest                                                                                                                                                "docker-entrypoint.s…"   About an hour ago   Up About an hour             0.0.0.0:8080->8080/tcp, :::8080->8080/tcp                                                                                         explorer.mynetwork.com
+
+5781cde4d8a5   hyperledger/explorer-db:latest                                                                                                                                             "docker-entrypoint.s…"   About an hour ago   Up About an hour (healthy)   5432/tcp                                                                                                                          explorerdb.mynetwork.com
+
+6bde7ca0ac18   hyperledger/fabric-tools:latest                                                                                                                                            "/bin/bash"              2 hours ago         Up 2 hours                                                                                                                                                     cli
+
+14b208e38779   hyperledger/fabric-peer:latest                                                                                                                                             "peer node start"        2 hours ago         Up 2 hours                   0.0.0.0:9051->9051/tcp, :::9051->9051/tcp, 7051/tcp, 0.0.0.0:9445->9445/tcp, :::9445->9445/tcp                                    peer0.org2.example.com
+
+e693c23441c6   hyperledger/fabric-peer:latest                                                                                                                                             "peer node start"        2 hours ago         Up 2 hours                   0.0.0.0:7051->7051/tcp, :::7051->7051/tcp, 0.0.0.0:9444->9444/tcp, :::9444->9444/tcp                                              peer0.org1.example.com
+
+b220b35d5ecd   hyperledger/fabric-orderer:latest                                                                                                                                          "orderer"                2 hours ago         Up 2 hours                   0.0.0.0:7050->7050/tcp, :::7050->7050/tcp, 0.0.0.0:7053->7053/tcp, :::7053->7053/tcp, 0.0.0.0:9443->9443/tcp, :::9443->9443/tcp   orderer.example.com
+
+08eba5687177   hyperledger/fabric-nodeenv:2.5                                                                                                                                             "docker-entrypoint.s…"   3 weeks ago         Exited (1) 3 weeks ago                                                                                                                                         relaxed_benz
+
+b2a59b48cd79   hyperledger/fabric-nodeenv:2.5                                                                                                                                             "docker-entrypoint.s…"   3 weeks ago         Exited (1) 3 weeks ago                                                                                                                                         stoic_bhabha
+
+45788eebdbbe   hyperledger/fabric-nodeenv:2.5                                                                                                                                             "docker-entrypoint.s…"   3 weeks ago         Exited (1) 3 weeks ago                                                                                                                                         wonderful_wescoff
+
+
+2. docker exec -it e693c23441c6 peer channel list
+
+3. docker exec -it explorer.mynetwork.com sh
+
+ping peer0.org1.example.com
+ping peer0.org2.example.com
+
+
+4. docker exec -it explorerdb.mynetwork.com sh
+
+
+

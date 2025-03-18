@@ -1,0 +1,64 @@
+
+
+
+1. network
+2. privacy
+
+	channel
+	
+3. automation
+4. never changes
+
+
+
+
+
+-----------
+
+
+1. blockchain
+
+- network personalized - public / private
+
+
+- network member -> peer / node
+
+- peer/node connect
+
+- exam_question
+
+organization_1
+
+- peer/ node -> university
+- peer/ node -> student
+- orderer ->  attendance check, prequisite(fee) ,	take exam, 	Evaluation, 	result publish
+		punch machine	accounts		registrer	faculty		marking softare
+		code block		code			code		code		code
+		feature
+		Chain		Chain			Chain		Chain		Chain
+		approve		done			paper		40%		D
+		
+		
+		EXAM CHAINCODE ( 5 chains ) group of chains...
+		
+		
+		ADMINISTRATION CHAINCODE
+			- chain 1 - admisssion
+			- chain 2 - staff
+			- chain 3 - HR
+		
+
+		5 task	( 5 types of program / implementation of business logic )
+		
+			PASS	- piece of output/result/information
+	
+	5 task class	channel_2
+	
+- channel_1 ( task 1,2,3,4,5) - university all layer of staffs
+
+		
+
+evalautaion - peer usa organization_2
+
+
+
