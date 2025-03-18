@@ -1,0 +1,22 @@
+
+----------
+To Do List
+----------
+
+1. get into ns-allinone-3.41/ns-3.41
+
+2. create a folder "lte-04"
+
+3. create another folder "packets"
+   inside "lte-04" folder
+
+4. paste "lte_04.cc" file inside "scratch" folder
+
+
+
+
+
+
+
+
+
